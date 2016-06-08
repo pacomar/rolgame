@@ -16,8 +16,8 @@ bootstrap(RolGameAppComponent, [
 	FIREBASE_PROVIDERS,
 	defaultFirebase('https://rolgame.firebaseio.com/'),
 	firebaseAuthConfig({
-		provider: AuthProviders.Google,
-		method: AuthMethods.Redirect
+		provider: AuthProviders.Password,
+		method: AuthMethods.Password
 	})
 ]);
 
