@@ -14,9 +14,4 @@ describe('App: RolGame', () => {
       inject([RolGameAppComponent], (app: RolGameAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'rol-game works!\'',
-      inject([RolGameAppComponent], (app: RolGameAppComponent) => {
-    expect(app.title).toEqual('rol-game works!');
-  }));
 });

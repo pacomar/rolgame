@@ -28,8 +28,13 @@ export class RolGameAppComponent  implements OnInit {
   }
 
   ngOnInit() {
-    if(this.logued){
-      this.router.navigate(["/character"]);
+    if(!this.logued){
+      this.router.navigate(["/login"]);
     }
+  }
+
+  logout() {
+    this.af.auth.logout();
+    this.router.navigate(["/login"]);
   }
 }
