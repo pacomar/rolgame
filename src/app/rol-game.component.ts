@@ -5,6 +5,7 @@ import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/rou
 import { RegisterComponent } from './+register';
 import { LoginComponent } from './+login';
 import { ProfileComponent } from './+profile';
+import { CharacterCreateComponent } from './+character-create';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +19,8 @@ import { ProfileComponent } from './+profile';
   {path: '/character', component: CharacterComponent},
   {path: '/register', component: RegisterComponent},
   {path: '/login', component: LoginComponent},
-  {path: '/profile', component: ProfileComponent}
+  {path: '/profile', component: ProfileComponent},
+  {path: '/character-create', component: CharacterCreateComponent}
 ])
 export class RolGameAppComponent  implements OnInit {
   logued: boolean;

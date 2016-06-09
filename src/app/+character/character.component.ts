@@ -16,9 +16,13 @@ export class CharacterComponent implements OnInit {
     this.af.auth.subscribe(function(auth){
       if(auth != undefined){
         this.user = auth;
-        this.character = this.af.database.object('/characters/' + this.user.uid );
+        this.character = af.database.object('/characters/' + this.user.uid );
         this.character.subscribe(function(snapshot){
-          this.character = snapshot;
+          if(snapshot != null){
+            this.character = snapshot;
+          }else{
+            router.navigate(["/character-create"]);
+          }
         });
       }else{
         this.router.navigate(["/login"]);
