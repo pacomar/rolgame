@@ -24,6 +24,9 @@ export class LoginComponent implements OnInit {
   }
   
   login(email, pass) {
-    this.af.auth.login({ email: email, password: pass }).then(res => this.router.navigate(["/character"])).catch(err => this.error= err);
+    let that = this;
+    this.af.auth.login({ email: email, password: pass }).then(function(res){
+      that.router.navigate(["/character"]);
+    }).catch(err => this.error= err);
   }
 }

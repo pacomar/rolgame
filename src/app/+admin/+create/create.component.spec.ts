@@ -9,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { CharacterCreateComponent } from './character-create.component';
+import { CreateComponent } from './create.component';
 
-describe('Component: CharacterCreate', () => {
+describe('Component: Create', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [CharacterCreateComponent]);
+  beforeEachProviders(() => [CreateComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([CharacterCreateComponent],
-      (component: CharacterCreateComponent) => {
+  it('should inject the component', inject([CreateComponent],
+      (component: CreateComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(CharacterCreateComponentTestController)
+    return builder.createAsync(CreateComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(CharacterCreateComponent));
+        let query = fixture.debugElement.query(By.directive(CreateComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -37,10 +37,10 @@ describe('Component: CharacterCreate', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-character-create></app-character-create>
+    <app-create></app-create>
   `,
-  directives: [CharacterCreateComponent]
+  directives: [CreateComponent]
 })
-class CharacterCreateComponentTestController {
+class CreateComponentTestController {
 }
 
