@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable, FirebaseAuthState } from 'angularfire2';
 import { Router , Routes , ROUTER_DIRECTIVES } from '@angular/router';
 import { CreateComponent } from './+create';
+import { DetailComponent } from './+detail';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,8 @@ import { CreateComponent } from './+create';
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-  {path: '/create', component: CreateComponent}
+  {path: '/create', component: CreateComponent},
+  {path: '/', component: DetailComponent}
 ])
 export class CharacterComponent implements OnInit {
   user: FirebaseAuthState;
