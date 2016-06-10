@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire } from 'angularfire2';
-import { Router, ROUTER_DIRECTIVES} from '@angular/router';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -14,19 +14,24 @@ export class LoginComponent implements OnInit {
   error: string;
   constructor(public af: AngularFire,
     private router: Router) {
-    this.af.auth.subscribe(auth => this.logued = auth != undefined);
+      let that = this;
+    this.af.auth.subscribe(function(auth){
+      if(auth != undefined){
+        that.router.navigate(["/character"]);
+      }
+    });
   }
 
-  ngOnInit() {
-    if(this.logued){
-      this.router.navigate(["/character"]);
-    }
-  }
+  ngOnInit() { }
   
   login(email, pass) {
     let that = this;
     this.af.auth.login({ email: email, password: pass }).then(function(res){
       that.router.navigate(["/character"]);
     }).catch(err => this.error= err);
+  }
+
+  goToRegister(){
+    this.router.navigate(["/register"]);
   }
 }

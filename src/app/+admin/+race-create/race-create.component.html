@@ -1,0 +1,22 @@
+<form role="form">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" #name id="name">
+  </div>
+  <div class="error_form" *ngIf="error">
+    {{error}}
+  </div>
+  <div class="form-group">
+    <label for="strength">Strength:</label>
+    <input type="number" class="form-control" #strength id="strength">
+  </div>
+  <div class="form-group">
+    <label for="intelligence">Intelligence:</label>
+    <input type="number" class="form-control" #intelligence id="intelligence">
+  </div>
+  <div class="form-group">
+    <label for="agility">Agility:</label>
+    <input type="number" class="form-control" #agility id="agility">
+  </div>
+  <button (click)="save(name.value, strength.value, intelligence.value, agility.value)" class="btn btn-default">Crear</button>
+</form>

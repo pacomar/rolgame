@@ -11,5 +11,5 @@
     <input type="password" class="form-control" #pass id="pwd">
   </div>
   <button (click)="login(email.value, pass.value)" class="btn btn-default">Login</button>
-  <a [routerLink]="['/register']" class="btn btn-default">Register</a>
+  <a (click)="goToRegister()" class="btn btn-default">Register</a>
 </form>

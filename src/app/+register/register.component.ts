@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire } from 'angularfire2';
-import { Router, ROUTER_DIRECTIVES} from '@angular/router';
+import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -25,7 +25,11 @@ export class RegisterComponent implements OnInit {
   }
   
   register(email, pass) {
-    this.af.auth.createUser({ email: email, password: pass }).then(res => this.router.navigate(["/login"])).catch(err => this.error= err);
+    let that = this;
+    this.af.auth.createUser({ email: email, password: pass }).then(function(res){
+      that.af.database.object('/users/' + res.uid).set({name: email.replace(/@.*/, ''), admin: false});
+      that.router.navigate(["/login"]);
+    }).catch(err => this.error= err);
   }
 
 }
