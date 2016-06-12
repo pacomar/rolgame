@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateComponent } from './+create';
 import { RaceCreateComponent } from './+race-create';
+import { ClassCreateComponent } from './+class-create';
 import { Routes , Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angularfire2';
 
@@ -13,7 +14,9 @@ import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angula
 })
 @Routes([
   {path: '/create', component: CreateComponent},
-  {path: '/race-create', component: RaceCreateComponent}
+  {path: '/race-create', component: RaceCreateComponent},
+  {path: '/class-create', component: ClassCreateComponent}
+
 
 ])
 export class AdminComponent implements OnInit {

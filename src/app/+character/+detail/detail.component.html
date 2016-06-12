@@ -1,1 +1,28 @@
-{{character.name}}
+<div class="row">
+    <dl class="col-xs-6">
+        <dt>Name:</dt>
+        <dd>{{character.name}}</dd>
+        <dt>Level:</dt>
+        <dd>{{character.level}}</dd>
+        <dt>Race:</dt>
+        <dd>{{character.race}}</dd>
+        <dt>Class:</dt>
+        {{character.class}}
+        <dt>Life:</dt>
+        <dd>
+            <app-progress-bar [minValue]="'0'" [nowValue]="character.actual_life" [maxValue]="character.base_life" [colorGreen]="true" [colorBlue]="false" [colorYellow]="false" [colorRed]="false"></app-progress-bar>
+        </dd>
+        <dt>Expereince</dt>
+        <dd>
+            <app-progress-bar [minValue]="minExperience" [nowValue]="character.experience" [maxValue]="maxExperience" [colorGreen]="false" [colorBlue]="false" [colorYellow]="true" [colorRed]="false"></app-progress-bar>        
+        </dd>
+    </dl>
+    <dl class="col-xs-6">
+        <dt>Agility</dt>
+        <dd>{{character.agility}}</dd>
+        <dt>Intelligence:</dt>
+        <dd>{{character.intelligence}}</dd>
+        <dt>Strength</dt>
+        {{character.strength}}
+    </dl>
+</div>

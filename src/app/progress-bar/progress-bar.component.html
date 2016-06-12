@@ -1,0 +1,7 @@
+<div class="progress" *ngIf="maxValue">
+  <div class="progress-bar" 
+  [class.progress-bar-success]="colorValue" [class.progress-bar-success]="colorGreen" [class.progress-bar-info]="colorBlue" [class.progress-bar-warning]="colorYellow" [class.progress-bar-danger]="colorRed" role="progressbar" [attr.aria-valuenow]="nowValue"
+  [attr.aria-valuemin]="minValue" [attr.aria-valuemax]="maxValue" style="width:50%">
+    {{nowValue}} / {{maxValue}}
+  </div>
+</div>
