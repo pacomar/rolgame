@@ -50,6 +50,7 @@ const barrels: string[] = [
   'app/+admin/+race-create',
   'app/+admin/+class-create',
   'app/progress-bar',
+  'app/+inn',
   /** @cli-barrel */
 ];
 

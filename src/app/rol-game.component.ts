@@ -6,6 +6,7 @@ import { RegisterComponent } from './+register';
 import { LoginComponent } from './+login';
 import { ProfileComponent } from './+profile';
 import { AdminComponent } from './+admin';
+import { InnComponent } from './+inn';
 
 @Component({
   moduleId: module.id,
@@ -21,7 +22,9 @@ import { AdminComponent } from './+admin';
   {path: '/register', component: RegisterComponent},
   {path: '/login', component: LoginComponent},
   {path: '/profile', component: ProfileComponent},
-  {path: '/admin', component: AdminComponent}
+  {path: '/admin', component: AdminComponent},
+  {path: '/inn', component: InnComponent}
+
 ])
 export class RolGameAppComponent  implements OnInit {
   logued: boolean;

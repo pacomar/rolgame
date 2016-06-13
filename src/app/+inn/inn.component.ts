@@ -1,20 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseObjectObservable, FirebaseAuthState, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseObjectObservable, FirebaseAuthState } from 'angularfire2';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { ProgressBarComponent } from '../../progress-bar/progress-bar.component'
 
 @Component({
   moduleId: module.id,
-  selector: 'app-detail',
-  templateUrl: 'detail.component.html',
-  styleUrls: ['detail.component.css'],
-  directives: [ROUTER_DIRECTIVES, ProgressBarComponent]
+  selector: 'app-inn',
+  templateUrl: 'inn.component.html',
+  styleUrls: ['inn.component.css'],
+  directives: [ROUTER_DIRECTIVES]
 })
-export class DetailComponent implements OnInit {
+export class InnComponent implements OnInit {
   user: FirebaseAuthState;
   character: FirebaseObjectObservable<any>;
-  minExperience: any;
-  maxExperience: any;
+  actual: number;
   constructor(public af: AngularFire,
     private router: Router) {
     let that = this;
@@ -24,11 +22,8 @@ export class DetailComponent implements OnInit {
         that.character = af.database.object('/characters/' + that.user.uid );
         that.character.subscribe(function(snapshot){
           if(snapshot != null){
+            that.actual = new Date().getTime();
             that.character = snapshot;
-            that.minExperience = af.database.object('/levels/' + snapshot.level );
-            that.minExperience.subscribe(res => that.minExperience = res);
-            that.maxExperience = af.database.object('/levels/' + ( parseInt(snapshot.level) + 1) );
-            that.maxExperience.subscribe(res => that.maxExperience = res);        
           }else{
             that.router.navigate(["/character/create"]);
           }
@@ -40,6 +35,13 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  takeARest(min: number, gold: number) {
+    let actual = new Date().getTime();
+    /*if(this.character.busy < actual){
+        // update character
+    }*/
   }
 
 }

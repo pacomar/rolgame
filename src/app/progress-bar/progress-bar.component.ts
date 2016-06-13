@@ -26,4 +26,12 @@ export class ProgressBarComponent implements OnInit {
 
   ngOnInit() { }
 
+  calculatePercentage() {
+    let a = this.nowValue;
+    let b = this.maxValue;
+    let c = a / b;
+    let d = c * 100;
+    return d + "%";
+  }
+
 }

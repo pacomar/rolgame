@@ -23,5 +23,4 @@ export class RaceCreateComponent implements OnInit {
         that.router.navigate(['/admin']);
       });
   }
-
 }
