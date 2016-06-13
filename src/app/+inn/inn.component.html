@@ -1,20 +1,37 @@
 <div *ngIf="character">
-  <p *ngIf="character.busy == false">
-    The character is busy in {{character.busy_place}}
-  </p>
+  <div *ngIf="busy">
+    <p>
+      The character is busy in {{character.busy_place}}
+    </p>
+    <p>
+      Action finish in {{ actual_time }} seconds
+    </p>
+  </div>
 
-  <div *ngIf="character.busy == true">
-    <div class="col-sm-3">
-      Rest 5 min + 10 life
-      <button (click)="takeARest(5, 5)">Take a rest 5 Gold</button>
+  <div *ngIf="!busy" class="row">
+    <div class="col-sm-4">
+      <p class="text-center">
+        Rest 5 min + 10 life
+      </p>
+      <p class="text-center">
+        <button (click)="takeARest(5, 5, 10)">Take a rest 5 Gold</button>
+      </p>
     </div>
-    <div class="col-sm-3">
-      Rest 10 min + 30 life
-      <button (click)="takeARest(10, 8)">Take a rest 8 Gold</button>
+    <div class="col-sm-4">
+      <p class="text-center">
+        Rest 10 min + 30 life
+      </p>
+      <p class="text-center">
+        <button (click)="takeARest(10, 8, 30)">Take a rest 8 Gold</button>
+      </p>
     </div>
-    <div class="col-sm-3">
-      Rest 20 min + 80 life
-      <button (click)="takeARest(20, 14)">Take a rest 14 Gold</button>
+    <div class="col-sm-4">
+      <p class="text-center">
+        Rest 20 min + 80 life
+      </p>
+      <p class="text-center">
+        <button (click)="takeARest(20, 14, 80)">Take a rest 14 Gold</button>
+      </p>
     </div>
   </div>
 </div>

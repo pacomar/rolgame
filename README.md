@@ -1,3 +1,9 @@
 # rolgame
 
-url: rolgame.surge.sh
+url: http://rolgame.surge.sh
+
+to exevute project in local:
+
+npm i
+
+ng serve
