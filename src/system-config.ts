@@ -51,6 +51,7 @@ const barrels: string[] = [
   'app/+admin/+class-create',
   'app/progress-bar',
   'app/+inn',
+  'app/+quest',
   /** @cli-barrel */
 ];
 

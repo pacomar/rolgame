@@ -39,7 +39,8 @@ export class CreateComponent implements OnInit {
   save(name: string, race: string, nclass: string) {
     let nRace = this.races.find(x => x.id === race);
     let nClass = this.classes.find(x => x.id === nclass);
-    this.character.set({ name: name, race: race, class: nclass, level: 1, experience: 1, base_life: 100, actual_life: 50, gold: 100, busy: new Date().getTime(), busy_place: "inn",
+    this.character.set({ name: name, race: race, class: nclass, level: 1, experience: 1, base_life: 100, actual_life: 100,
+      gold: 100, busy: new Date().getTime(), busy_place: "",
       strength: parseInt(nRace.strength) + parseInt(nClass.strength),
       intelligence: parseInt(nRace.intelligence) + parseInt(nClass.intelligence),
       agility: parseInt(nRace.agility) + parseInt(nClass.agility) });

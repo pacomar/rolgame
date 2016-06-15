@@ -1,0 +1,37 @@
+<div *ngIf="character">
+  <div *ngIf="busy">
+    <p>
+      The character is busy in {{character.busy_place}}
+    </p>
+    <p>
+      Action finish in {{ actual_time }} seconds
+    </p>
+  </div>
+
+  <div *ngIf="!busy" class="row">
+    <div class="col-sm-4">
+      <p class="text-center">
+        Quest 5 min
+      </p>
+      <p class="text-center">
+        <button (click)="doAQuest(5)">DO</button>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center">
+        Quest 10 min
+      </p>
+      <p class="text-center">
+        <button (click)="doAQuest(10)">DO</button>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center">
+        Quest 20 min
+      </p>
+      <p class="text-center">
+        <button (click)="doAQuest(20)">DO</button>
+      </p>
+    </div>
+  </div>
+</div>

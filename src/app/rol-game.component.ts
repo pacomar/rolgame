@@ -7,6 +7,7 @@ import { LoginComponent } from './+login';
 import { ProfileComponent } from './+profile';
 import { AdminComponent } from './+admin';
 import { InnComponent } from './+inn';
+import { QuestComponent } from './+quest';
 
 @Component({
   moduleId: module.id,
@@ -23,7 +24,9 @@ import { InnComponent } from './+inn';
   {path: '/login', component: LoginComponent},
   {path: '/profile', component: ProfileComponent},
   {path: '/admin', component: AdminComponent},
-  {path: '/inn', component: InnComponent}
+  {path: '/inn', component: InnComponent},
+  {path: '/quest', component: QuestComponent}
+
 
 ])
 export class RolGameAppComponent  implements OnInit {
